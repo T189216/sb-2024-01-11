@@ -1,5 +1,6 @@
 package com.ll.sbb20240111;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.job.builder.JobBuilder;
@@ -11,6 +12,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
 
+@Slf4j
 @Configuration
 public class config {
 
@@ -31,6 +33,7 @@ public class config {
     @Bean
     public Tasklet testTasklet(){
         return ((contribution, chunkContext) -> {
+            log.info("Hello World");
             System.out.println("Hello World");
             return RepeatStatus.FINISHED;
         });

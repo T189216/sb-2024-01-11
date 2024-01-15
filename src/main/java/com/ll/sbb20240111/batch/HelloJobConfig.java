@@ -15,7 +15,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 @Slf4j
 @Configuration
-public class HelloConfig {
+public class HelloJobConfig {
 
     @Bean
     public Job helloJob(JobRepository jobRepository, Step helloStep1) {
